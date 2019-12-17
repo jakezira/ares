@@ -1,0 +1,8 @@
+
+manager/ares_manager/ares_manager.exe
+manager/ares_manager/logs/
+node/ares_node/ares_node.exe
+node/ares_node/debug
+node/ares_node/logs/
+protoc-gen-go.exe
+protoc.exe
