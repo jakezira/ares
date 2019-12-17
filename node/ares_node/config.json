@@ -1,0 +1,28 @@
+{
+    "port": "4262",
+    "monitor": "5262",
+    
+    "name": "node1",
+    "manager": {
+        "host": "10.70.3.98",
+        "port": "4261"
+    },
+    "apps": [
+        {
+            "name": "apollo.server",
+            "run": "E:\\OMS\\gitlab\\ams\\apollo\\_build\\_release\\Apollo.Server.exe",
+            "dir": "E:\\OMS\\gitlab\\ams\\apollo\\_build\\_release"
+        },
+        {
+            "name": "aurora",
+            "run": ".\\aurora.exe",
+            "dir": "E:\\OMS\\gitlab\\ams\\apollo\\_build\\_release"
+        },
+        {
+            "name": "demo",
+            "run": ".\\demo.exe",
+            "dir": "E:\\OMS\\gitlab\\oms\\golang\\bin\\demo"
+        }
+    ],
+    "debug": "on"
+}

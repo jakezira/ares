@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package ares;
+
+service AresService {
+  // Login
+  rpc Login (Node) returns (Empty) {}
+  rpc Logout (Empty) returns (Empty) {}
+
+  rpc RegisterApps (Apps) returns (Empty) {}
+  rpc NotifyAppsStatus (AppsStatus) returns (Empty) {}
+
+  rpc HeartBeat (Empty) returns (Empty) {}
+  rpc SubscribeCommands (Node) returns (stream App) {}
+}
+
+// Database
+message Node {
+  string name = 1;
+}
+
+message Empty {
+}
+
+message App {
+  string name = 1;
+}
+
+message Apps {
+  repeated App apps = 1;
+}
+
+enum AppStatusMode {
+  ON = 0;
+  FAILED = 1;
+  OFF = 2;
+}
+
+message AppStatus {
+  AppStatusMode mode = 1;
+}
+
+message AppsStatus {
+  map<string, AppStatus> status = 1;
+}
